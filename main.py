@@ -7,13 +7,16 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-EMAIL = os.environ.get("GARMIN_EMAIL")
-PASSWORD = os.environ.get("GARMIN_PASSWORD")
-
 @app.route("/data")
 def get_data():
+    email = os.environ.get("GARMIN_EMAIL", "")
+    password = os.environ.get("GARMIN_PASSWORD", "")
+
+    if not email or not password:
+        return jsonify({"error": "Variables manquantes", "email_found": bool(email), "password_found": bool(password)}), 500
+
     try:
-        api = Garmin(EMAIL, PASSWORD)
+        api = Garmin(email, password)
         api.login()
         today = date.today().isoformat()
         hrv = api.get_hrv_data(today)
@@ -21,6 +24,7 @@ def get_data():
         battery = api.get_body_battery(today)
         activities = api.get_activities(0, 5)
         return jsonify({
+            "date": today,
             "hrv": hrv.get("hrvSummary", {}) if hrv else {},
             "sleep": sleep.get("dailySleepDTO", {}) if sleep else {},
             "body_battery": battery[0] if battery else {},
