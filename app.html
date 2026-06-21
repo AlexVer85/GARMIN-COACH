@@ -10,6 +10,11 @@ body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #
 .header { background: #fff; border-bottom: 1px solid #e5e5e5; padding: 12px 16px; display: flex; align-items: center; gap: 10px; position: sticky; top: 0; z-index: 10; }
 .header h1 { font-size: 16px; font-weight: 600; }
 .badge { font-size: 11px; padding: 3px 8px; border-radius: 20px; background: #E1F5EE; color: #0F6E56; font-weight: 500; margin-left: auto; }
+.tabs { display: flex; background: #fff; border-bottom: 1px solid #e5e5e5; }
+.tab { flex: 1; padding: 12px; text-align: center; font-size: 13px; font-weight: 500; color: #888; cursor: pointer; border-bottom: 2px solid transparent; }
+.tab.active { color: #1a1a1a; border-bottom-color: #1a1a1a; }
+.page { display: none; }
+.page.active { display: block; }
 .metrics { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 16px; }
 .mc { background: #fff; border-radius: 12px; padding: 14px; border: 1px solid #e5e5e5; }
 .ml { font-size: 12px; color: #888; margin-bottom: 4px; }
@@ -45,6 +50,32 @@ body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #
 .loading-screen { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px; gap: 12px; color: #888; font-size: 14px; }
 .spinner { width: 32px; height: 32px; border: 3px solid #e5e5e5; border-top-color: #1a1a1a; border-radius: 50%; animation: spin 0.8s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
+
+/* Journal */
+.journal-form { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.form-label { font-size: 13px; font-weight: 600; color: #555; margin-bottom: 4px; display: block; }
+.form-input { width: 100%; padding: 10px 14px; border: 1px solid #e5e5e5; border-radius: 10px; font-size: 14px; background: #fff; outline: none; }
+.form-textarea { width: 100%; padding: 10px 14px; border: 1px solid #e5e5e5; border-radius: 10px; font-size: 14px; background: #fff; outline: none; resize: none; min-height: 100px; }
+.exo-list { display: flex; flex-direction: column; gap: 8px; }
+.exo-row { display: flex; gap: 8px; align-items: center; }
+.exo-row input { flex: 1; padding: 8px 12px; border: 1px solid #e5e5e5; border-radius: 8px; font-size: 13px; }
+.exo-row .del-btn { width: 32px; height: 32px; border-radius: 8px; border: 1px solid #e5e5e5; background: #fff; color: #888; font-size: 16px; cursor: pointer; flex-shrink: 0; }
+.add-exo-btn { padding: 8px 14px; border-radius: 8px; border: 1px dashed #ccc; background: #f9f9f9; color: #666; font-size: 13px; cursor: pointer; width: 100%; }
+.submit-btn { padding: 14px; border-radius: 12px; border: none; background: #1a1a1a; color: #fff; font-size: 15px; font-weight: 600; cursor: pointer; }
+.submit-btn:disabled { opacity: 0.4; }
+.history-list { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.history-card { background: #fff; border-radius: 12px; border: 1px solid #e5e5e5; padding: 14px; }
+.hc-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.hc-title { font-size: 14px; font-weight: 600; }
+.hc-date { font-size: 12px; color: #888; }
+.hc-exos { font-size: 13px; color: #555; line-height: 1.6; }
+.hc-note { font-size: 12px; color: #888; margin-top: 6px; font-style: italic; }
+.hc-actions { display: flex; gap: 8px; margin-top: 10px; }
+.analyze-btn { flex: 1; padding: 8px; border-radius: 8px; border: 1px solid #e5e5e5; background: #f5f5f5; font-size: 13px; cursor: pointer; }
+.type-pills { display: flex; gap: 6px; flex-wrap: wrap; }
+.type-pill { padding: 6px 12px; border-radius: 20px; border: 1px solid #e5e5e5; background: #fff; font-size: 12px; cursor: pointer; }
+.type-pill.active { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+.empty-state { text-align: center; padding: 40px 16px; color: #aaa; font-size: 14px; }
 </style>
 </head>
 <body>
@@ -55,43 +86,192 @@ body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #
   <span class="badge" id="badge">Chargement...</span>
 </div>
 
-<div id="loading" class="loading-screen">
-  <div class="spinner"></div>
-  <p>Connexion à Garmin...</p>
+<div class="tabs">
+  <div class="tab active" onclick="showTab('coach')">🏋️ Coach</div>
+  <div class="tab" onclick="showTab('journal')">📝 Journal</div>
+  <div class="tab" onclick="showTab('history')">📊 Historique</div>
 </div>
 
-<div id="main" style="display:none">
-  <div class="metrics" id="metrics"></div>
-  <div class="alert" id="alert" style="display:none"></div>
-  <p class="section-title">Dernières activités</p>
-  <div class="acts" id="acts"></div>
-  <p class="section-title">Générer une séance</p>
-  <div class="sports">
-    <button class="sb active" data-sport="trail" onclick="selectSport(this)">🏃 Trail</button>
-    <button class="sb" data-sport="muscu" onclick="selectSport(this)">🏋️ Muscu</button>
-    <button class="sb" data-sport="hyrox" onclick="selectSport(this)">🔥 Hyrox</button>
+<!-- PAGE COACH -->
+<div id="page-coach" class="page active">
+  <div id="loading" class="loading-screen">
+    <div class="spinner"></div>
+    <p>Connexion à Garmin...</p>
   </div>
-  <button class="gen-btn" id="gen-btn" onclick="generate()">Générer ma séance ↗</button>
-  <div class="chat-area">
-    <div class="msgs" id="msgs">
-      <div class="msg coach"><div class="av c">IA</div><div class="bub" id="welcome">Données chargées ! Choisis un sport et génère ta séance.</div></div>
+  <div id="main" style="display:none">
+    <div class="metrics" id="metrics"></div>
+    <div class="alert" id="alert" style="display:none"></div>
+    <p class="section-title">Dernières activités Garmin</p>
+    <div class="acts" id="acts"></div>
+    <p class="section-title">Générer une séance</p>
+    <div class="sports">
+      <button class="sb active" data-sport="trail" onclick="selectSport(this)">🏃 Trail</button>
+      <button class="sb" data-sport="muscu" onclick="selectSport(this)">🏋️ Muscu</button>
+      <button class="sb" data-sport="hyrox" onclick="selectSport(this)">🔥 Hyrox</button>
     </div>
-    <div class="inp-area">
-      <input id="inp" type="text" placeholder="Pose une question..." onkeydown="if(event.key==='Enter') send()" />
-      <button id="send-btn" onclick="send()">↑</button>
+    <button class="gen-btn" id="gen-btn" onclick="generate()">Générer ma séance ↗</button>
+    <div class="chat-area">
+      <div class="msgs" id="msgs">
+        <div class="msg coach"><div class="av c">IA</div><div class="bub" id="welcome">Données chargées ! Choisis un sport et génère ta séance.</div></div>
+      </div>
+      <div class="inp-area">
+        <input id="inp" type="text" placeholder="Pose une question..." onkeydown="if(event.key==='Enter') send()" />
+        <button id="send-btn" onclick="send()">↑</button>
+      </div>
     </div>
+  </div>
+</div>
+
+<!-- PAGE JOURNAL -->
+<div id="page-journal" class="page">
+  <div class="journal-form">
+    <div>
+      <label class="form-label">Type de séance</label>
+      <div class="type-pills">
+        <div class="type-pill active" onclick="selectType(this, 'Hyrox')">🔥 Hyrox</div>
+        <div class="type-pill" onclick="selectType(this, 'Musculation')">🏋️ Muscu</div>
+        <div class="type-pill" onclick="selectType(this, 'Trail')">🏃 Trail</div>
+        <div class="type-pill" onclick="selectType(this, 'Circuit')">⚡ Circuit</div>
+      </div>
+    </div>
+    <div>
+      <label class="form-label">Date</label>
+      <input type="date" class="form-input" id="j-date" />
+    </div>
+    <div>
+      <label class="form-label">Durée (minutes)</label>
+      <input type="number" class="form-input" id="j-duration" placeholder="ex: 45" />
+    </div>
+    <div>
+      <label class="form-label">Exercices</label>
+      <div class="exo-list" id="exo-list">
+        <div class="exo-row">
+          <input type="text" placeholder="ex: Burpees — 3x20" />
+          <button class="del-btn" onclick="removeExo(this)">×</button>
+        </div>
+      </div>
+      <button class="add-exo-btn" onclick="addExo()">+ Ajouter un exercice</button>
+    </div>
+    <div>
+      <label class="form-label">Ressenti / Notes</label>
+      <textarea class="form-textarea" id="j-notes" placeholder="Comment tu t'es senti ? Difficultés, PBs..."></textarea>
+    </div>
+    <button class="submit-btn" id="submit-btn" onclick="saveSession()">💾 Enregistrer + Analyser</button>
+  </div>
+</div>
+
+<!-- PAGE HISTORIQUE -->
+<div id="page-history" class="page">
+  <div class="history-list" id="history-list">
+    <div class="empty-state">Aucune séance enregistrée.<br>Commence par saisir ta première séance dans le Journal !</div>
   </div>
 </div>
 
 <script>
 const BASE = '';
-let data = null, sport = 'trail', hist = [], busy = false;
+let garminData = null, sport = 'trail', hist = [], busy = false;
+let sessionType = 'Hyrox';
+let sessions = JSON.parse(localStorage.getItem('sessions') || '[]');
 
+// Init date
+document.getElementById('j-date').value = new Date().toISOString().split('T')[0];
+
+function showTab(tab) {
+  document.querySelectorAll('.tab').forEach((t,i) => t.classList.toggle('active', ['coach','journal','history'][i] === tab));
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + tab).classList.add('active');
+  if (tab === 'history') renderHistory();
+}
+
+function selectType(el, type) {
+  document.querySelectorAll('.type-pill').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  sessionType = type;
+}
+
+function addExo() {
+  const list = document.getElementById('exo-list');
+  const row = document.createElement('div');
+  row.className = 'exo-row';
+  row.innerHTML = '<input type="text" placeholder="ex: Wallballs — 3x15 (9kg)" /><button class="del-btn" onclick="removeExo(this)">×</button>';
+  list.appendChild(row);
+}
+
+function removeExo(btn) {
+  const list = document.getElementById('exo-list');
+  if (list.children.length > 1) btn.parentElement.remove();
+}
+
+async function saveSession() {
+  const date = document.getElementById('j-date').value;
+  const duration = document.getElementById('j-duration').value;
+  const notes = document.getElementById('j-notes').value;
+  const exos = Array.from(document.querySelectorAll('#exo-list input')).map(i => i.value).filter(v => v.trim());
+
+  if (!date || exos.length === 0) { alert('Remplis au moins la date et un exercice.'); return; }
+
+  const session = { id: Date.now(), date, type: sessionType, duration, exos, notes, garmin: garminData ? { hrv: garminData.hrv?.lastNightAvg, bb: getLastBB(), sleep: garminData.sleep?.sleepScores?.overall?.value } : null };
+  sessions.unshift(session);
+  localStorage.setItem('sessions', JSON.stringify(sessions));
+
+  document.getElementById('submit-btn').disabled = true;
+  document.getElementById('submit-btn').textContent = 'Analyse en cours...';
+
+  await analyzeSession(session, true);
+
+  document.getElementById('submit-btn').disabled = false;
+  document.getElementById('submit-btn').textContent = '💾 Enregistrer + Analyser';
+  showTab('history');
+}
+
+async function analyzeSession(session, isNew = false) {
+  const prompt = `Analyse cette séance${isNew ? ' que je viens de terminer' : ''} :
+Type: ${session.type}
+Date: ${session.date}
+Durée: ${session.duration} min
+Exercices: ${session.exos.join(', ')}
+Ressenti: ${session.notes || 'non renseigné'}
+${session.garmin ? `Données Garmin du jour: HRV ${session.garmin.hrv}ms, Body Battery ${session.garmin.bb}/100, Score sommeil ${session.garmin.sleep}/100` : ''}
+
+Donne une analyse de la séance, des points positifs, des axes d'amélioration, et une recommandation pour la prochaine séance du même type.`;
+
+  showTab('coach');
+  await chat(prompt);
+}
+
+function renderHistory() {
+  const list = document.getElementById('history-list');
+  if (sessions.length === 0) {
+    list.innerHTML = '<div class="empty-state">Aucune séance enregistrée.<br>Commence par saisir ta première séance dans le Journal !</div>';
+    return;
+  }
+  list.innerHTML = sessions.map(s => `
+    <div class="history-card">
+      <div class="hc-header">
+        <span class="hc-title">${s.type}</span>
+        <span class="hc-date">${s.date} · ${s.duration || '?'} min</span>
+      </div>
+      <div class="hc-exos">${s.exos.join('<br>')}</div>
+      ${s.notes ? `<div class="hc-note">${s.notes}</div>` : ''}
+      ${s.garmin ? `<div class="hc-note">HRV ${s.garmin.hrv}ms · BB ${s.garmin.bb}/100</div>` : ''}
+      <div class="hc-actions">
+        <button class="analyze-btn" onclick="analyzeSession(sessions.find(x=>x.id===${s.id}))">🔍 Analyser</button>
+      </div>
+    </div>`).join('');
+}
+
+function getLastBB() {
+  if (!garminData) return null;
+  const vals = garminData.body_battery?.bodyBatteryValuesArray || [];
+  return vals.length ? vals[vals.length-1][1] : null;
+}
+
+// COACH
 async function init() {
   try {
     const r = await fetch(BASE + '/data');
-    data = await r.json();
-    if (data.error) throw new Error(data.error);
+    garminData = await r.json();
+    if (garminData.error) throw new Error(garminData.error);
     render();
     document.getElementById('loading').style.display = 'none';
     document.getElementById('main').style.display = 'block';
@@ -101,14 +281,13 @@ async function init() {
 }
 
 function render() {
-  const h = data.hrv || {}, s = data.sleep || {}, bb = data.body_battery || {};
-  const bbVals = bb.bodyBatteryValuesArray || [];
-  const lastBB = bbVals.length ? bbVals[bbVals.length-1][1] : null;
+  const h = garminData.hrv||{}, s = garminData.sleep||{}, bb = garminData.body_battery||{};
+  const lastBB = getLastBB();
   const sleepMin = s.sleepTimeSeconds ? Math.round(s.sleepTimeSeconds/60) : 0;
-  const sh = Math.floor(sleepMin/60), sm = sleepMin % 60;
+  const sh = Math.floor(sleepMin/60), sm = sleepMin%60;
   const score = s.sleepScores?.overall?.value;
 
-  document.getElementById('badge').textContent = 'Live ' + (data.date||'');
+  document.getElementById('badge').textContent = 'Live ' + (garminData.date||'');
   document.getElementById('metrics').innerHTML = `
     <div class="mc"><div class="ml">HRV</div><div class="mv">${h.lastNightAvg||'—'} ms</div><div class="ms">${h.status||'—'}</div></div>
     <div class="mc"><div class="ml">Sommeil</div><div class="mv">${sh}h${sm||''}</div><div class="ms">score ${score||'—'}/100</div></div>
@@ -121,15 +300,13 @@ function render() {
     a.textContent = '⚠️ Nuit courte (score ' + score + '/100) — intensité modérée recommandée.';
   }
 
-  const acts = data.activities || [];
-  const typeLabel = { strength_training: '🏋️ Muscu', indoor_cardio: '🔥 Cardio', running: '🏃 Course' };
+  const acts = garminData.activities||[];
+  const typeLabel = { strength_training:'🏋️ Muscu', indoor_cardio:'🔥 Cardio', running:'🏃 Course' };
   document.getElementById('acts').innerHTML = acts.slice(0,4).map(a =>
     `<div class="act"><div class="at">${typeLabel[a.type]||a.type||'—'}</div><div class="an">${a.name||'—'}</div><div class="as">${a.date||''} · ${a.duration||0} min</div></div>`
   ).join('');
 
-  const bbVals2 = bb.bodyBatteryValuesArray || [];
-  const lbb = bbVals2.length ? bbVals2[bbVals2.length-1][1] : '?';
-  document.getElementById('welcome').textContent = `Live ${data.date} — HRV ${h.lastNightAvg||'?'} ms (${h.status||'?'}), BB ${lbb}/100. Choisis ton sport !`;
+  document.getElementById('welcome').textContent = `Live ${garminData.date} — HRV ${h.lastNightAvg||'?'} ms (${h.status||'?'}), BB ${lastBB||'?'}/100. Choisis ton sport !`;
 }
 
 function selectSport(btn) {
@@ -139,24 +316,26 @@ function selectSport(btn) {
 }
 
 function sysPrompt() {
-  const h = data.hrv||{}, s = data.sleep||{}, bb = data.body_battery||{};
-  const bbVals = bb.bodyBatteryValuesArray||[];
-  const lastBB = bbVals.length ? bbVals[bbVals.length-1][1] : '?';
+  if (!garminData) return 'Tu es un coach sportif expert trail/musculation/Hyrox et nutrition. Réponds en français.';
+  const h = garminData.hrv||{}, s = garminData.sleep||{}, bb = garminData.body_battery||{};
+  const lastBB = getLastBB();
   const sleepMin = s.sleepTimeSeconds ? Math.round(s.sleepTimeSeconds/60) : 0;
-  const acts = (data.activities||[]).map(a => `- ${a.name} (${a.date}) : ${a.duration}min, FC ${a.hrAvg}, ${a.calories} kcal`).join('\n');
+  const acts = (garminData.activities||[]).map(a => `- ${a.name} (${a.date}) : ${a.duration}min, FC ${a.hrAvg}`).join('\n');
+  const journalRecent = sessions.slice(0,3).map(s => `- ${s.type} (${s.date}) : ${s.exos.join(', ')}`).join('\n');
   return `Tu es un coach sportif expert trail/musculation/Hyrox et nutrition.
-DONNÉES GARMIN LIVE (${data.date}):
+DONNÉES GARMIN LIVE (${garminData.date}):
 - HRV: ${h.lastNightAvg||'?'}ms — ${h.status||'?'} (zone ${h.baseline?.balancedLow||'?'}–${h.baseline?.balancedUpper||'?'})
-- Sommeil: ${Math.floor(sleepMin/60)}h${sleepMin%60} — score ${s.sleepScores?.overall?.value||'?'}/100 — profond ${s.deepSleepSeconds ? Math.round(s.deepSleepSeconds/60)+'min' : '?'}
-- Body Battery: ${lastBB}/100 — FC repos ${s.avgHeartRate ? Math.round(s.avgHeartRate) : '?'}bpm — SpO2 ${s.averageSpO2Value||'?'}%
-ACTIVITÉS RÉCENTES:\n${acts}
-PROFIL: Alexandre, 39 ans, trail/muscu/hyrox 3x/sem. Objectifs: trail 20km nov 2026, Hyrox oct 2026.
-Adapte séances ET alimentation à l'état du jour. Concis et actionnable. Réponds en français.`;
+- Sommeil: ${Math.floor(sleepMin/60)}h${sleepMin%60} — score ${s.sleepScores?.overall?.value||'?'}/100
+- Body Battery: ${lastBB||'?'}/100 — FC repos ${s.avgHeartRate ? Math.round(s.avgHeartRate) : '?'}bpm
+ACTIVITÉS GARMIN: ${acts}
+JOURNAL SÉANCES: ${journalRecent || 'aucune saisie'}
+PROFIL: Alexandre, 39 ans, trail/muscu/hyrox 3x/sem. Trail 20km nov 2026, Hyrox oct 2026.
+Concis et actionnable. Réponds en français.`;
 }
 
 async function generate() {
-  if (!data || busy) return;
-  const labels = { trail:'Trail / Course à pied', muscu:'Musculation', hyrox:'Hyrox / Circuit' };
+  if (!garminData || busy) return;
+  const labels = { trail:'Trail / Course', muscu:'Musculation', hyrox:'Hyrox / Circuit' };
   await chat(`Génère une séance de ${labels[sport]} pour aujourd'hui basée sur mes données Garmin.`);
 }
 
