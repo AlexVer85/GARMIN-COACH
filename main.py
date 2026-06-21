@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, send_file
 from flask_cors import CORS
 from garminconnect import Garmin
 from datetime import date
@@ -7,14 +7,17 @@ import os
 app = Flask(__name__)
 CORS(app)
 
+@app.route("/")
+@app.route("/app")
+def serve_app():
+    return send_file("app.html")
+
 @app.route("/data")
 def get_data():
     email = os.environ.get("GARMIN_EMAIL", "")
     password = os.environ.get("GARMIN_PASSWORD", "")
-
     if not email or not password:
-        return jsonify({"error": "Variables manquantes", "email_found": bool(email), "password_found": bool(password)}), 500
-
+        return jsonify({"error": "Variables manquantes"}), 500
     try:
         api = Garmin(email, password)
         api.login()
@@ -42,11 +45,6 @@ def get_data():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@app.route("/")
-def index():
-    return "Garmin Coach API en ligne"
-
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=8080)
-    
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host="0.0.0.0", port=port)
