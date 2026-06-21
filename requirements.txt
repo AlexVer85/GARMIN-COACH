@@ -1,3 +1,4 @@
 garminconnect
 flask
 flask-cors
+requests

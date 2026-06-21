@@ -1,8 +1,9 @@
-from flask import Flask, jsonify, send_file
+from flask import Flask, jsonify, send_file, request
 from flask_cors import CORS
 from garminconnect import Garmin
 from datetime import date
 import os
+import requests
 
 app = Flask(__name__)
 CORS(app)
@@ -42,6 +43,25 @@ def get_data():
                 } for a in activities[:5]
             ]
         })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/chat", methods=["POST"])
+def chat():
+    try:
+        body = request.get_json()
+        api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+        headers = {
+            "Content-Type": "application/json",
+            "x-api-key": api_key,
+            "anthropic-version": "2023-06-01"
+        }
+        res = requests.post(
+            "https://api.anthropic.com/v1/messages",
+            json=body,
+            headers=headers
+        )
+        return jsonify(res.json())
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
