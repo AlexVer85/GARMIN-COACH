@@ -4,9 +4,17 @@ from garminconnect import Garmin
 from datetime import date
 import os
 import requests
+import time
 
 app = Flask(__name__)
 CORS(app)
+
+# Cache pour éviter le rate-limit Garmin (429)
+_cache = {
+    "data": None,
+    "timestamp": 0
+}
+CACHE_DURATION = 1800  # 30 minutes en secondes
 
 @app.route("/")
 @app.route("/app")
@@ -15,20 +23,30 @@ def serve_app():
 
 @app.route("/data")
 def get_data():
+    global _cache
+
+    # Retourner le cache si encore valide
+    if _cache["data"] and (time.time() - _cache["timestamp"]) < CACHE_DURATION:
+        return jsonify(_cache["data"])
+
     email = os.environ.get("GARMIN_EMAIL", "")
     password = os.environ.get("GARMIN_PASSWORD", "")
     if not email or not password:
         return jsonify({"error": "Variables manquantes"}), 500
+
     try:
         api = Garmin(email, password)
         api.login()
         today = date.today().isoformat()
+
         hrv = api.get_hrv_data(today)
         sleep = api.get_sleep_data(today)
         battery = api.get_body_battery(today)
         activities = api.get_activities(0, 5)
-        return jsonify({
+
+        data = {
             "date": today,
+            "cached_at": time.strftime("%H:%M:%S"),
             "hrv": hrv.get("hrvSummary", {}) if hrv else {},
             "sleep": sleep.get("dailySleepDTO", {}) if sleep else {},
             "body_battery": battery[0] if battery else {},
@@ -42,9 +60,26 @@ def get_data():
                     "calories": a.get("calories")
                 } for a in activities[:5]
             ]
-        })
+        }
+
+        # Mettre en cache
+        _cache["data"] = data
+        _cache["timestamp"] = time.time()
+
+        return jsonify(data)
+
     except Exception as e:
+        # En cas d'erreur, retourner le cache expiré si disponible
+        if _cache["data"]:
+            _cache["data"]["warning"] = f"Données en cache (erreur Garmin: {str(e)})"
+            return jsonify(_cache["data"])
         return jsonify({"error": str(e)}), 500
+
+@app.route("/cache/clear", methods=["POST"])
+def clear_cache():
+    global _cache
+    _cache = {"data": None, "timestamp": 0}
+    return jsonify({"message": "Cache vidé"})
 
 @app.route("/chat", methods=["POST"])
 def chat():
