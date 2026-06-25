@@ -1,6 +1,6 @@
 {
   "date": "2026-06-25",
-  "fetched_at": "2026-06-25T13:26:40.665372",
+  "fetched_at": "2026-06-25T21:16:39.836586",
   "hrv": {
     "calendarDate": "2026-06-25",
     "weeklyAvg": 60,
@@ -124,7 +124,7 @@
       "userProfilePk": 134963810,
       "calendarDate": "2026-06-26",
       "deviceId": 3606061703,
-      "timestampGmt": "2026-06-25T03:44:30",
+      "timestampGmt": "2026-06-25T16:58:40",
       "baseline": 470,
       "actual": 470,
       "feedback": "NO_CHANGE_NO_ADJUSTMENTS",
@@ -140,35 +140,35 @@
   "body_battery": {
     "date": "2026-06-25",
     "charged": 51,
-    "drained": 1,
+    "drained": 45,
     "startTimestampGMT": "2026-06-24T22:00:00.0",
-    "endTimestampGMT": "2026-06-25T06:08:00.0",
+    "endTimestampGMT": "2026-06-25T17:32:00.0",
     "startTimestampLocal": "2026-06-25T00:00:00.0",
-    "endTimestampLocal": "2026-06-25T08:08:00.0",
+    "endTimestampLocal": "2026-06-25T19:32:00.0",
     "bodyBatteryValuesArray": [
       [
         1782338400000,
         30
       ],
       [
-        1782348120000,
-        58
-      ],
-      [
-        1782348300000,
-        58
-      ],
-      [
-        1782357300000,
-        76
-      ],
-      [
-        1782358200000,
-        76
+        1782360720000,
+        78
       ],
       [
         1782365760000,
         80
+      ],
+      [
+        1782385200000,
+        63
+      ],
+      [
+        1782385560000,
+        63
+      ],
+      [
+        1782406980000,
+        36
       ]
     ],
     "bodyBatteryValueDescriptorDTOList": [
@@ -182,10 +182,10 @@
       }
     ],
     "bodyBatteryDynamicFeedbackEvent": {
-      "eventTimestampGmt": "2026-06-25T06:07:45.0",
+      "eventTimestampGmt": "2026-06-25T17:11:33.0",
       "bodyBatteryLevel": "HIGH",
-      "feedbackShortType": "MORNING_RECOVERING_AND_INACTIVE",
-      "feedbackLongType": "MORNING_RECOVERING_AND_INACTIVE"
+      "feedbackShortType": "DAY_RECOVERING_AND_INTENSIVE_EXERCISE",
+      "feedbackLongType": "DAY_RECOVERING_AND_INTENSIVE_EXERCISE"
     },
     "bodyBatteryActivityEvent": [
       {
@@ -196,6 +196,42 @@
         "bodyBatteryImpact": 52,
         "feedbackType": "NONE",
         "shortFeedback": "NONE"
+      },
+      {
+        "eventType": "RECOVERY",
+        "eventStartTimeGmt": "2026-06-25T05:06:02.0",
+        "timezoneOffset": 7200000,
+        "durationInMilliseconds": 2760000,
+        "bodyBatteryImpact": 2,
+        "feedbackType": "RECOVERY_BODY_BATTERY_INCREASE",
+        "shortFeedback": "BODY_BATTERY_RECHARGE"
+      },
+      {
+        "eventType": "RECOVERY",
+        "eventStartTimeGmt": "2026-06-25T09:09:52.0",
+        "timezoneOffset": 7200000,
+        "durationInMilliseconds": 3660000,
+        "bodyBatteryImpact": 0,
+        "feedbackType": "RECOVERY_LONG_BODY_BATTERY_NOT_INCREASE",
+        "shortFeedback": "LONG_RESTFUL_PERIOD"
+      },
+      {
+        "eventType": "RECOVERY",
+        "eventStartTimeGmt": "2026-06-25T14:02:57.0",
+        "timezoneOffset": 7200000,
+        "durationInMilliseconds": 2160000,
+        "bodyBatteryImpact": -1,
+        "feedbackType": "RECOVERY_BODY_BATTERY_NOT_INCREASE",
+        "shortFeedback": "RESTFUL_PERIOD"
+      },
+      {
+        "eventType": "ACTIVITY",
+        "eventStartTimeGmt": "2026-06-25T16:20:43.0",
+        "timezoneOffset": 7200000,
+        "durationInMilliseconds": 2220000,
+        "bodyBatteryImpact": -12,
+        "feedbackType": "EXERCISE_TRAINING_EFFECT_3",
+        "shortFeedback": "IMPROVING_LACTATE_THRESHOLD"
       }
     ],
     "endOfDayBodyBatteryDynamicFeedbackEvent": {
@@ -206,6 +242,14 @@
     }
   },
   "activities": [
+    {
+      "name": "Mougins - Seuil",
+      "type": "running",
+      "date": "2026-06-25",
+      "duration": 38,
+      "hrAvg": 152.0,
+      "calories": 515.0
+    },
     {
       "name": "Musculation",
       "type": "strength_training",
@@ -237,14 +281,6 @@
       "duration": 68,
       "hrAvg": 91.0,
       "calories": 277.0
-    },
-    {
-      "name": "HYROX",
-      "type": "indoor_cardio",
-      "date": "2026-06-16",
-      "duration": 35,
-      "hrAvg": 148.0,
-      "calories": 445.0
     }
   ]
 }
