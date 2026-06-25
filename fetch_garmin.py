@@ -1,6 +1,6 @@
 import os
 import json
-from datetime import date
+from datetime import date, datetime
 from garminconnect import Garmin
 
 email = os.environ["GARMIN_EMAIL"]
@@ -8,6 +8,7 @@ password = os.environ["GARMIN_PASSWORD"]
 
 api = Garmin(email, password)
 api.login()
+
 today = date.today().isoformat()
 
 hrv = api.get_hrv_data(today)
@@ -17,6 +18,7 @@ activities = api.get_activities(0, 5)
 
 data = {
     "date": today,
+    "fetched_at": datetime.utcnow().isoformat(),
     "hrv": hrv.get("hrvSummary", {}) if hrv else {},
     "sleep": sleep.get("dailySleepDTO", {}) if sleep else {},
     "body_battery": battery[0] if battery else {},
@@ -35,4 +37,4 @@ data = {
 with open("data.json", "w") as f:
     json.dump(data, f, indent=2)
 
-print(f"Done: {today}")
+print(f"Done: {today} at {data['fetched_at']}")
