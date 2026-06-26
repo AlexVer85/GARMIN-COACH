@@ -1,6 +1,6 @@
 {
   "date": "2026-06-26",
-  "fetched_at": "2026-06-26T18:19:35.116210",
+  "fetched_at": "2026-06-26T22:55:57.146756",
   "hrv": {
     "calendarDate": "2026-06-26",
     "weeklyAvg": 59,
@@ -124,7 +124,7 @@
       "userProfilePk": 134963810,
       "calendarDate": "2026-06-27",
       "deviceId": 3606061703,
-      "timestampGmt": "2026-06-26T08:23:30",
+      "timestampGmt": "2026-06-26T18:11:41",
       "baseline": 470,
       "actual": 470,
       "feedback": "NO_CHANGE_NO_ADJUSTMENTS",
@@ -140,35 +140,35 @@
   "body_battery": {
     "date": "2026-06-26",
     "charged": 53,
-    "drained": 31,
+    "drained": 60,
     "startTimestampGMT": "2026-06-25T22:00:00.0",
-    "endTimestampGMT": "2026-06-26T10:50:00.0",
+    "endTimestampGMT": "2026-06-26T18:43:00.0",
     "startTimestampLocal": "2026-06-26T00:00:00.0",
-    "endTimestampLocal": "2026-06-26T12:50:00.0",
+    "endTimestampLocal": "2026-06-26T20:43:00.0",
     "bodyBatteryValuesArray": [
       [
         1782424800000,
         30
       ],
       [
-        1782439740000,
-        69
-      ],
-      [
-        1782440280000,
-        69
-      ],
-      [
         1782449100000,
         83
       ],
       [
-        1782455760000,
-        73
+        1782449820000,
+        83
       ],
       [
-        1782470700000,
-        52
+        1782474480000,
+        48
+      ],
+      [
+        1782474840000,
+        48
+      ],
+      [
+        1782498240000,
+        23
       ]
     ],
     "bodyBatteryValueDescriptorDTOList": [
@@ -182,10 +182,10 @@
       }
     ],
     "bodyBatteryDynamicFeedbackEvent": {
-      "eventTimestampGmt": "2026-06-26T09:08:33.0",
+      "eventTimestampGmt": "2026-06-26T18:32:44.0",
       "bodyBatteryLevel": "MODERATE",
-      "feedbackShortType": "DAY_NOT_STRESS_DATA_AND_EXERCISE",
-      "feedbackLongType": "DAY_NOT_STRESS_DATA_AND_EXERCISE"
+      "feedbackShortType": "DAY_NOT_STRESS_DATA_AND_INTENSIVE_EXERCISE",
+      "feedbackLongType": "DAY_NOT_STRESS_DATA_AND_INTENSIVE_EXERCISE"
     },
     "bodyBatteryActivityEvent": [
       {
@@ -209,6 +209,14 @@
     ]
   },
   "activities": [
+    {
+      "name": "Villeneuve-Loubet Course \u00e0 pied",
+      "type": "running",
+      "date": "2026-06-26",
+      "duration": 56,
+      "hrAvg": 141.0,
+      "calories": 628.0
+    },
     {
       "name": "Musculation",
       "type": "strength_training",
@@ -240,14 +248,6 @@
       "duration": 38,
       "hrAvg": 150.0,
       "calories": 504.0
-    },
-    {
-      "name": "Mougins Course \u00e0 pied",
-      "type": "running",
-      "date": "2026-06-21",
-      "duration": 54,
-      "hrAvg": 131.0,
-      "calories": 608.0
     }
   ]
 }
