@@ -1,6 +1,6 @@
 {
   "date": "2026-06-29",
-  "fetched_at": "2026-06-29T16:47:07.412659",
+  "fetched_at": "2026-06-29T21:56:46.189498",
   "hrv": {
     "calendarDate": "2026-06-29",
     "weeklyAvg": 59,
@@ -21,7 +21,7 @@
     "userProfilePK": 134963810,
     "calendarDate": "2026-06-29",
     "sleepTimeSeconds": 28788,
-    "napTimeSeconds": 0,
+    "napTimeSeconds": 2340,
     "sleepWindowConfirmed": true,
     "sleepWindowConfirmationType": "enhanced_confirmed_final",
     "sleepStartTimestampGMT": 1782683089000,
@@ -124,51 +124,67 @@
       "userProfilePk": 134963810,
       "calendarDate": "2026-06-30",
       "deviceId": 3606061703,
-      "timestampGmt": "2026-06-29T05:50:38",
+      "timestampGmt": "2026-06-29T16:59:45",
       "baseline": 470,
-      "actual": 440,
+      "actual": 420,
       "feedback": "DECREASED",
       "trainingFeedback": "NO_CHANGE",
       "sleepHistoryAdjustment": "DECREASING",
       "hrvAdjustment": "NO_CHANGE",
-      "napAdjustment": "NO_CHANGE",
+      "napAdjustment": "DECREASING",
       "displayedForTheDay": true,
       "preferredActivityTracker": true
     },
+    "dailyNapDTOS": [
+      {
+        "userProfilePK": 134963810,
+        "deviceId": 3606061703,
+        "calendarDate": "2026-06-29",
+        "napTimeSec": 2340,
+        "napStartTimestampGMT": "2026-06-29T16:20:37",
+        "napEndTimestampGMT": "2026-06-29T16:59:37",
+        "napFeedback": "LATE_TIMING_LONG_DURATION_LOW_NEED",
+        "napSource": 0,
+        "napStartTimeOffset": 120,
+        "napEndTimeOffset": 120,
+        "createTimestampGMT": null,
+        "updateTimestampGMT": null
+      }
+    ],
     "breathingDisruptionSeverity": "LOW"
   },
   "body_battery": {
     "date": "2026-06-29",
-    "charged": 68,
-    "drained": 25,
+    "charged": 72,
+    "drained": 50,
     "startTimestampGMT": "2026-06-28T22:00:00.0",
-    "endTimestampGMT": "2026-06-29T11:27:00.0",
+    "endTimestampGMT": "2026-06-29T18:41:00.0",
     "startTimestampLocal": "2026-06-29T00:00:00.0",
-    "endTimestampLocal": "2026-06-29T13:27:00.0",
+    "endTimestampLocal": "2026-06-29T20:41:00.0",
     "bodyBatteryValuesArray": [
       [
         1782684000000,
         28
       ],
       [
-        1782699480000,
-        74
-      ],
-      [
-        1782700200000,
-        75
+        1782708300000,
+        92
       ],
       [
         1782712080000,
         96
       ],
       [
-        1782716400000,
-        92
+        1782732780000,
+        70
       ],
       [
-        1782731520000,
-        71
+        1782733680000,
+        70
+      ],
+      [
+        1782757260000,
+        50
       ]
     ],
     "bodyBatteryValueDescriptorDTOList": [
@@ -182,10 +198,10 @@
       }
     ],
     "bodyBatteryDynamicFeedbackEvent": {
-      "eventTimestampGmt": "2026-06-29T09:50:49.0",
+      "eventTimestampGmt": "2026-06-29T18:30:17.0",
       "bodyBatteryLevel": "HIGH",
-      "feedbackShortType": "DAY_RECOVERING_AND_INACTIVE",
-      "feedbackLongType": "DAY_RECOVERING_AND_INACTIVE"
+      "feedbackShortType": "SLEEP_PREPARATION_RECOVERING_AND_INACTIVE",
+      "feedbackLongType": "SLEEP_PREPARATION_RECOVERING_AND_INACTIVE"
     },
     "bodyBatteryActivityEvent": [
       {
@@ -196,6 +212,24 @@
         "bodyBatteryImpact": 71,
         "feedbackType": "NONE",
         "shortFeedback": "NONE"
+      },
+      {
+        "eventType": "RECOVERY",
+        "eventStartTimeGmt": "2026-06-29T11:32:27.0",
+        "timezoneOffset": 7200000,
+        "durationInMilliseconds": 3300000,
+        "bodyBatteryImpact": -3,
+        "feedbackType": "RECOVERY_BODY_BATTERY_NOT_INCREASE",
+        "shortFeedback": "RESTFUL_PERIOD"
+      },
+      {
+        "eventType": "NAP",
+        "eventStartTimeGmt": "2026-06-29T16:20:37.0",
+        "timezoneOffset": 7200000,
+        "durationInMilliseconds": 2340000,
+        "bodyBatteryImpact": 4,
+        "feedbackType": "NAP_RECOVERING_BODY_BATTERY_INCREASE",
+        "shortFeedback": "RESTFUL_NAP"
       }
     ],
     "endOfDayBodyBatteryDynamicFeedbackEvent": {
