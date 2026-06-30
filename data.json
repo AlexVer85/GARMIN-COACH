@@ -1,6 +1,6 @@
 {
   "date": "2026-06-30",
-  "fetched_at": "2026-06-30T12:31:03.292836",
+  "fetched_at": "2026-06-30T19:24:18.044164",
   "hrv": {
     "calendarDate": "2026-06-30",
     "weeklyAvg": 61,
@@ -124,7 +124,7 @@
       "userProfilePk": 134963810,
       "calendarDate": "2026-07-01",
       "deviceId": 3606061703,
-      "timestampGmt": "2026-06-30T04:33:09",
+      "timestampGmt": "2026-06-30T17:15:32",
       "baseline": 470,
       "actual": 440,
       "feedback": "DECREASED",
@@ -139,36 +139,36 @@
   },
   "body_battery": {
     "date": "2026-06-30",
-    "charged": 42,
-    "drained": 1,
+    "charged": 43,
+    "drained": 59,
     "startTimestampGMT": "2026-06-29T22:00:00.0",
-    "endTimestampGMT": "2026-06-30T05:20:00.0",
+    "endTimestampGMT": "2026-06-30T17:47:00.0",
     "startTimestampLocal": "2026-06-30T00:00:00.0",
-    "endTimestampLocal": "2026-06-30T07:20:00.0",
+    "endTimestampLocal": "2026-06-30T19:47:00.0",
     "bodyBatteryValuesArray": [
       [
         1782770400000,
         58
       ],
       [
-        1782778860000,
-        85
-      ],
-      [
-        1782779220000,
-        85
-      ],
-      [
-        1782787860000,
-        98
-      ],
-      [
-        1782788040000,
-        98
-      ],
-      [
         1782790380000,
         100
+      ],
+      [
+        1782794160000,
+        100
+      ],
+      [
+        1782816840000,
+        71
+      ],
+      [
+        1782817920000,
+        71
+      ],
+      [
+        1782840780000,
+        42
       ]
     ],
     "bodyBatteryValueDescriptorDTOList": [
@@ -182,10 +182,10 @@
       }
     ],
     "bodyBatteryDynamicFeedbackEvent": {
-      "eventTimestampGmt": "2026-06-30T04:35:21.0",
+      "eventTimestampGmt": "2026-06-30T17:15:32.0",
       "bodyBatteryLevel": "HIGH",
-      "feedbackShortType": null,
-      "feedbackLongType": "EARLY_MORNING_HIGH_MODERATE_GOOD_SLEEP_DURATION_HIGH_HRV"
+      "feedbackShortType": "DAY_RECOVERING_AND_EXERCISE",
+      "feedbackLongType": "DAY_RECOVERING_AND_EXERCISE"
     },
     "bodyBatteryActivityEvent": [
       {
@@ -196,6 +196,15 @@
         "bodyBatteryImpact": 49,
         "feedbackType": "NONE",
         "shortFeedback": "NONE"
+      },
+      {
+        "eventType": "ACTIVITY",
+        "eventStartTimeGmt": "2026-06-30T16:14:23.0",
+        "timezoneOffset": 7200000,
+        "durationInMilliseconds": 3600000,
+        "bodyBatteryImpact": -5,
+        "feedbackType": "EXERCISE_TRAINING_EFFECT_BELOW_2",
+        "shortFeedback": "EASY_AEROBIC_BASE"
       }
     ],
     "endOfDayBodyBatteryDynamicFeedbackEvent": {
@@ -206,6 +215,14 @@
     }
   },
   "activities": [
+    {
+      "name": "Musculation",
+      "type": "strength_training",
+      "date": "2026-06-30",
+      "duration": 61,
+      "hrAvg": 84.0,
+      "calories": 241.0
+    },
     {
       "name": "Villeneuve-Loubet Course \u00e0 pied",
       "type": "running",
@@ -237,14 +254,6 @@
       "duration": 68,
       "hrAvg": 102.0,
       "calories": 392.0
-    },
-    {
-      "name": "HYROX",
-      "type": "indoor_cardio",
-      "date": "2026-06-22",
-      "duration": 38,
-      "hrAvg": 150.0,
-      "calories": 504.0
     }
   ]
 }
