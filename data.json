@@ -1,6 +1,6 @@
 {
   "date": "2026-07-01",
-  "fetched_at": "2026-07-01T13:44:05.730800",
+  "fetched_at": "2026-07-01T20:58:23.376343",
   "hrv": {
     "calendarDate": "2026-07-01",
     "weeklyAvg": 62,
@@ -124,7 +124,7 @@
       "userProfilePk": 134963810,
       "calendarDate": "2026-07-02",
       "deviceId": 3606061703,
-      "timestampGmt": "2026-07-01T05:00:07",
+      "timestampGmt": "2026-07-01T16:39:18",
       "baseline": 470,
       "actual": 470,
       "feedback": "NO_CHANGE_NO_ADJUSTMENTS",
@@ -140,35 +140,35 @@
   "body_battery": {
     "date": "2026-07-01",
     "charged": 60,
-    "drained": 25,
+    "drained": 58,
     "startTimestampGMT": "2026-06-30T22:00:00.0",
-    "endTimestampGMT": "2026-07-01T09:47:00.0",
+    "endTimestampGMT": "2026-07-01T17:47:00.0",
     "startTimestampLocal": "2026-07-01T00:00:00.0",
-    "endTimestampLocal": "2026-07-01T11:47:00.0",
+    "endTimestampLocal": "2026-07-01T19:47:00.0",
     "bodyBatteryValuesArray": [
       [
         1782856800000,
         36
       ],
       [
-        1782870660000,
-        72
-      ],
-      [
-        1782871020000,
-        73
+        1782880020000,
+        94
       ],
       [
         1782881640000,
         96
       ],
       [
-        1782885240000,
-        90
+        1782903780000,
+        67
       ],
       [
-        1782898740000,
-        71
+        1782904320000,
+        66
+      ],
+      [
+        1782926100000,
+        38
       ]
     ],
     "bodyBatteryValueDescriptorDTOList": [
@@ -182,10 +182,10 @@
       }
     ],
     "bodyBatteryDynamicFeedbackEvent": {
-      "eventTimestampGmt": "2026-07-01T09:00:21.0",
+      "eventTimestampGmt": "2026-07-01T16:39:18.0",
       "bodyBatteryLevel": "HIGH",
-      "feedbackShortType": "DAY_RECOVERING_AND_INACTIVE",
-      "feedbackLongType": "DAY_RECOVERING_AND_INACTIVE"
+      "feedbackShortType": "DAY_RECOVERING_AND_EXERCISE",
+      "feedbackLongType": "DAY_RECOVERING_AND_EXERCISE"
     },
     "bodyBatteryActivityEvent": [
       {
@@ -196,10 +196,27 @@
         "bodyBatteryImpact": 59,
         "feedbackType": "NONE",
         "shortFeedback": "NONE"
+      },
+      {
+        "eventType": "ACTIVITY",
+        "eventStartTimeGmt": "2026-07-01T15:44:18.0",
+        "timezoneOffset": 7200000,
+        "durationInMilliseconds": 3240000,
+        "bodyBatteryImpact": -5,
+        "feedbackType": "EXERCISE_TRAINING_EFFECT_BELOW_2",
+        "shortFeedback": "NONE"
       }
     ]
   },
   "activities": [
+    {
+      "name": "Musculation",
+      "type": "strength_training",
+      "date": "2026-07-01",
+      "duration": 55,
+      "hrAvg": 86.0,
+      "calories": 226.0
+    },
     {
       "name": "Musculation",
       "type": "strength_training",
@@ -231,14 +248,6 @@
       "duration": 38,
       "hrAvg": 152.0,
       "calories": 515.0
-    },
-    {
-      "name": "Musculation",
-      "type": "strength_training",
-      "date": "2026-06-24",
-      "duration": 68,
-      "hrAvg": 102.0,
-      "calories": 392.0
     }
   ]
 }
