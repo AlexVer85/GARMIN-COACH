@@ -1,6 +1,6 @@
 {
   "date": "2026-07-30",
-  "fetched_at": "2026-07-30T11:07:03.553361",
+  "fetched_at": "2026-07-30T18:14:37.295255",
   "hrv": {
     "calendarDate": "2026-07-30",
     "weeklyAvg": 52,
@@ -124,7 +124,7 @@
       "userProfilePk": 134963810,
       "calendarDate": "2026-07-31",
       "deviceId": 3606061703,
-      "timestampGmt": "2026-07-30T05:27:44",
+      "timestampGmt": "2026-07-30T17:21:50",
       "baseline": 470,
       "actual": 470,
       "feedback": "NO_CHANGE_NO_ADJUSTMENTS",
@@ -139,36 +139,36 @@
   },
   "body_battery": {
     "date": "2026-07-30",
-    "charged": 57,
-    "drained": 7,
+    "charged": 58,
+    "drained": 59,
     "startTimestampGMT": "2026-07-29T22:00:00.0",
-    "endTimestampGMT": "2026-07-30T06:22:00.0",
+    "endTimestampGMT": "2026-07-30T16:12:00.0",
     "startTimestampLocal": "2026-07-30T00:00:00.0",
-    "endTimestampLocal": "2026-07-30T08:22:00.0",
+    "endTimestampLocal": "2026-07-30T18:12:00.0",
     "bodyBatteryValuesArray": [
       [
         1785362400000,
         35
       ],
       [
-        1785372300000,
-        63
-      ],
-      [
-        1785372480000,
-        63
-      ],
-      [
-        1785382020000,
-        83
-      ],
-      [
-        1785382560000,
-        84
+        1785384000000,
+        87
       ],
       [
         1785388320000,
         91
+      ],
+      [
+        1785405240000,
+        70
+      ],
+      [
+        1785406320000,
+        70
+      ],
+      [
+        1785427020000,
+        34
       ]
     ],
     "bodyBatteryValueDescriptorDTOList": [
@@ -182,10 +182,10 @@
       }
     ],
     "bodyBatteryDynamicFeedbackEvent": {
-      "eventTimestampGmt": "2026-07-30T06:19:41.0",
-      "bodyBatteryLevel": "HIGH",
-      "feedbackShortType": "MORNING_BALANCED_AND_INACTIVE",
-      "feedbackLongType": "MORNING_BALANCED_AND_INACTIVE"
+      "eventTimestampGmt": "2026-07-30T14:43:05.0",
+      "bodyBatteryLevel": "MODERATE",
+      "feedbackShortType": "DAY_BALANCED_AND_INACTIVE",
+      "feedbackLongType": "DAY_BALANCED_AND_INACTIVE"
     },
     "bodyBatteryActivityEvent": [
       {
@@ -205,6 +205,24 @@
         "bodyBatteryImpact": 1,
         "feedbackType": "NONE",
         "shortFeedback": "NONE"
+      },
+      {
+        "eventType": "RECOVERY",
+        "eventStartTimeGmt": "2026-07-30T08:16:23.0",
+        "timezoneOffset": 7200000,
+        "durationInMilliseconds": 4620000,
+        "bodyBatteryImpact": -2,
+        "feedbackType": "RECOVERY_LONG_BODY_BATTERY_NOT_INCREASE",
+        "shortFeedback": "LONG_RESTFUL_PERIOD"
+      },
+      {
+        "eventType": "STRESS",
+        "eventStartTimeGmt": "2026-07-30T12:20:28.0",
+        "timezoneOffset": 7200000,
+        "durationInMilliseconds": 4800000,
+        "bodyBatteryImpact": -13,
+        "feedbackType": "STRESS",
+        "shortFeedback": "STRESSFUL_PERIOD"
       }
     ],
     "endOfDayBodyBatteryDynamicFeedbackEvent": {
@@ -215,6 +233,14 @@
     }
   },
   "activities": [
+    {
+      "name": "Mougins Course \u00e0 pied",
+      "type": "running",
+      "date": "2026-07-30",
+      "duration": 49,
+      "hrAvg": 128.0,
+      "calories": 512.0
+    },
     {
       "name": "D\u00e9tente et concentration (cour",
       "type": "breathwork",
@@ -246,14 +272,6 @@
       "duration": 41,
       "hrAvg": 89.0,
       "calories": 158.0
-    },
-    {
-      "name": "Musculation",
-      "type": "strength_training",
-      "date": "2026-07-21",
-      "duration": 48,
-      "hrAvg": 81.0,
-      "calories": 172.0
     }
   ]
 }
