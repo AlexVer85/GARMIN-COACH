@@ -1,6 +1,6 @@
 {
   "date": "2026-08-02",
-  "fetched_at": "2026-08-02T18:00:40.668286",
+  "fetched_at": "2026-08-02T20:08:58.201499",
   "hrv": {
     "calendarDate": "2026-08-02",
     "weeklyAvg": 53,
@@ -156,35 +156,35 @@
   "body_battery": {
     "date": "2026-08-02",
     "charged": 66,
-    "drained": 64,
+    "drained": 73,
     "startTimestampGMT": "2026-08-01T22:00:00.0",
-    "endTimestampGMT": "2026-08-02T16:19:00.0",
+    "endTimestampGMT": "2026-08-02T18:29:00.0",
     "startTimestampLocal": "2026-08-02T00:00:00.0",
-    "endTimestampLocal": "2026-08-02T18:19:00.0",
+    "endTimestampLocal": "2026-08-02T20:29:00.0",
     "bodyBatteryValuesArray": [
       [
         1785621600000,
         34
       ],
       [
-        1785642840000,
-        95
+        1785646080000,
+        99
       ],
       [
         1785647160000,
         100
       ],
       [
-        1785665160000,
-        65
+        1785670380000,
+        56
       ],
       [
-        1785665880000,
-        64
+        1785670920000,
+        55
       ],
       [
-        1785687300000,
-        36
+        1785695040000,
+        27
       ]
     ],
     "bodyBatteryValueDescriptorDTOList": [
