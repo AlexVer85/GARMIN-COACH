@@ -1,6 +1,6 @@
 {
   "date": "2026-08-05",
-  "fetched_at": "2026-08-05T18:20:39.017443",
+  "fetched_at": "2026-08-05T20:25:47.469733",
   "hrv": {
     "calendarDate": "2026-08-05",
     "weeklyAvg": 58,
@@ -124,11 +124,11 @@
       "userProfilePk": 134963810,
       "calendarDate": "2026-08-06",
       "deviceId": 3606061703,
-      "timestampGmt": "2026-08-05T13:21:55",
+      "timestampGmt": "2026-08-05T18:51:46",
       "baseline": 470,
-      "actual": 450,
-      "feedback": "DECREASED",
-      "trainingFeedback": "NO_CHANGE",
+      "actual": 470,
+      "feedback": "NO_CHANGE_BALANCED",
+      "trainingFeedback": "HIGH_ACWR",
       "sleepHistoryAdjustment": "NO_CHANGE",
       "hrvAdjustment": "NO_CHANGE",
       "napAdjustment": "DECREASING",
@@ -156,35 +156,35 @@
   "body_battery": {
     "date": "2026-08-05",
     "charged": 60,
-    "drained": 63,
+    "drained": 72,
     "startTimestampGMT": "2026-08-04T22:00:00.0",
-    "endTimestampGMT": "2026-08-05T18:05:00.0",
+    "endTimestampGMT": "2026-08-05T18:56:00.0",
     "startTimestampLocal": "2026-08-05T00:00:00.0",
-    "endTimestampLocal": "2026-08-05T20:05:00.0",
+    "endTimestampLocal": "2026-08-05T20:56:00.0",
     "bodyBatteryValuesArray": [
       [
         1785880800000,
         37
       ],
       [
-        1785904200000,
-        96
-      ],
-      [
         1785905280000,
         97
       ],
       [
-        1785927780000,
-        65
+        1785906000000,
+        97
       ],
       [
-        1785929040000,
-        65
+        1785931020000,
+        62
       ],
       [
-        1785952800000,
-        34
+        1785931200000,
+        62
+      ],
+      [
+        1785955680000,
+        25
       ]
     ],
     "bodyBatteryValueDescriptorDTOList": [
@@ -198,10 +198,10 @@
       }
     ],
     "bodyBatteryDynamicFeedbackEvent": {
-      "eventTimestampGmt": "2026-08-05T13:33:40.0",
-      "bodyBatteryLevel": "HIGH",
-      "feedbackShortType": "DAY_RECOVERING_AND_INACTIVE",
-      "feedbackLongType": "DAY_RECOVERING_AND_INACTIVE"
+      "eventTimestampGmt": "2026-08-05T18:52:33.0",
+      "bodyBatteryLevel": "MODERATE",
+      "feedbackShortType": "SLEEP_PREPARATION_RECOVERING_AND_INTENSIVE_EXERCISE",
+      "feedbackLongType": "SLEEP_PREPARATION_RECOVERING_AND_INTENSIVE_EXERCISE"
     },
     "bodyBatteryActivityEvent": [
       {
@@ -221,6 +221,15 @@
         "bodyBatteryImpact": -2,
         "feedbackType": "NONE",
         "shortFeedback": "NONE"
+      },
+      {
+        "eventType": "ACTIVITY",
+        "eventStartTimeGmt": "2026-08-05T18:16:22.0",
+        "timezoneOffset": 7200000,
+        "durationInMilliseconds": 2100000,
+        "bodyBatteryImpact": -8,
+        "feedbackType": "EXERCISE_TRAINING_EFFECT_4_LATE",
+        "shortFeedback": "HIGHLY_IMPROVING_LACTATE_THRESHOLD"
       }
     ],
     "endOfDayBodyBatteryDynamicFeedbackEvent": {
@@ -231,6 +240,14 @@
     }
   },
   "activities": [
+    {
+      "name": "Le Cannet - Allure 10km/seuil",
+      "type": "running",
+      "date": "2026-08-05",
+      "duration": 35,
+      "hrAvg": 149.0,
+      "calories": 467.0
+    },
     {
       "name": "Musculation",
       "type": "strength_training",
@@ -262,14 +279,6 @@
       "duration": 49,
       "hrAvg": 128.0,
       "calories": 512.0
-    },
-    {
-      "name": "D\u00e9tente et concentration (cour",
-      "type": "breathwork",
-      "date": "2026-07-30",
-      "duration": 6,
-      "hrAvg": 51.0,
-      "calories": null
     }
   ]
 }
