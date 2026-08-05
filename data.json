@@ -1,6 +1,6 @@
 {
   "date": "2026-08-05",
-  "fetched_at": "2026-08-05T15:12:10.718536",
+  "fetched_at": "2026-08-05T18:20:39.017443",
   "hrv": {
     "calendarDate": "2026-08-05",
     "weeklyAvg": 58,
@@ -156,35 +156,35 @@
   "body_battery": {
     "date": "2026-08-05",
     "charged": 60,
-    "drained": 42,
+    "drained": 63,
     "startTimestampGMT": "2026-08-04T22:00:00.0",
-    "endTimestampGMT": "2026-08-05T13:32:00.0",
+    "endTimestampGMT": "2026-08-05T18:05:00.0",
     "startTimestampLocal": "2026-08-05T00:00:00.0",
-    "endTimestampLocal": "2026-08-05T15:32:00.0",
+    "endTimestampLocal": "2026-08-05T20:05:00.0",
     "bodyBatteryValuesArray": [
       [
         1785880800000,
         37
       ],
       [
-        1785899160000,
-        87
+        1785904200000,
+        96
       ],
       [
         1785905280000,
         97
       ],
       [
-        1785918060000,
-        78
+        1785927780000,
+        65
       ],
       [
-        1785918240000,
-        78
+        1785929040000,
+        65
       ],
       [
-        1785936420000,
-        55
+        1785952800000,
+        34
       ]
     ],
     "bodyBatteryValueDescriptorDTOList": [
@@ -198,7 +198,7 @@
       }
     ],
     "bodyBatteryDynamicFeedbackEvent": {
-      "eventTimestampGmt": "2026-08-05T10:33:08.0",
+      "eventTimestampGmt": "2026-08-05T13:33:40.0",
       "bodyBatteryLevel": "HIGH",
       "feedbackShortType": "DAY_RECOVERING_AND_INACTIVE",
       "feedbackLongType": "DAY_RECOVERING_AND_INACTIVE"
