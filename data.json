@@ -1,6 +1,6 @@
 {
   "date": "2026-08-06",
-  "fetched_at": "2026-08-06T07:37:14.749394",
+  "fetched_at": "2026-08-06T11:21:58.788069",
   "hrv": {
     "calendarDate": "2026-08-06",
     "weeklyAvg": 57,
@@ -140,7 +140,7 @@
   "body_battery": {
     "date": "2026-08-06",
     "charged": 50,
-    "drained": 12,
+    "drained": 21,
     "startTimestampGMT": "2026-08-05T22:00:00.0",
     "endTimestampGMT": "2026-08-06T07:36:00.0",
     "startTimestampLocal": "2026-08-06T00:00:00.0",
