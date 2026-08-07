@@ -1,6 +1,6 @@
 {
   "date": "2026-08-07",
-  "fetched_at": "2026-08-07T06:08:06.033192",
+  "fetched_at": "2026-08-07T08:12:38.537831",
   "hrv": {
     "calendarDate": "2026-08-07",
     "weeklyAvg": 59,
@@ -140,35 +140,35 @@
   "body_battery": {
     "date": "2026-08-07",
     "charged": 77,
-    "drained": 1,
+    "drained": 13,
     "startTimestampGMT": "2026-08-06T22:00:00.0",
-    "endTimestampGMT": "2026-08-07T05:39:00.0",
+    "endTimestampGMT": "2026-08-07T07:53:00.0",
     "startTimestampLocal": "2026-08-07T00:00:00.0",
-    "endTimestampLocal": "2026-08-07T07:39:00.0",
+    "endTimestampLocal": "2026-08-07T09:53:00.0",
     "bodyBatteryValuesArray": [
       [
         1786053600000,
         18
       ],
       [
-        1786062600000,
-        51
+        1786064940000,
+        58
       ],
       [
-        1786062780000,
-        51
+        1786065480000,
+        59
       ],
       [
-        1786071420000,
-        77
-      ],
-      [
-        1786071960000,
-        78
+        1786077000000,
+        90
       ],
       [
         1786080600000,
         94
+      ],
+      [
+        1786088880000,
+        82
       ]
     ],
     "bodyBatteryValueDescriptorDTOList": [
@@ -182,10 +182,10 @@
       }
     ],
     "bodyBatteryDynamicFeedbackEvent": {
-      "eventTimestampGmt": "2026-08-07T04:53:57.0",
+      "eventTimestampGmt": "2026-08-07T06:53:49.0",
       "bodyBatteryLevel": "HIGH",
-      "feedbackShortType": null,
-      "feedbackLongType": "EARLY_MORNING_HIGH_MODERATE_BB_BEFORE_SLEEP_AT_LEAST_2_CATEGORY_LOWER_GOOD_RECOVERY_SCORE_SLEEP_DURATION"
+      "feedbackShortType": "MORNING_RECOVERING_AND_INACTIVE",
+      "feedbackLongType": "MORNING_RECOVERING_AND_INACTIVE"
     },
     "bodyBatteryActivityEvent": [
       {
