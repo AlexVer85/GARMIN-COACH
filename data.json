@@ -1,11 +1,11 @@
 {
-  "date": "2026-08-09",
-  "fetched_at": "2026-08-09T19:31:50.423829",
+  "date": "2026-08-10",
+  "fetched_at": "2026-08-10T06:09:29.256318",
   "hrv": {},
   "sleep": {
     "id": null,
     "userProfilePK": 134963810,
-    "calendarDate": "2026-08-09",
+    "calendarDate": "2026-08-10",
     "sleepTimeSeconds": null,
     "napTimeSeconds": null,
     "sleepWindowConfirmed": null,
@@ -24,25 +24,10 @@
     "remSleepSeconds": null,
     "awakeSleepSeconds": null,
     "deviceRemCapable": false,
-    "retro": false,
-    "sleepNeed": {
-      "userProfilePk": 134963810,
-      "calendarDate": "2026-08-09",
-      "deviceId": 3606061703,
-      "timestampGmt": "2026-08-08T05:35:23",
-      "baseline": 470,
-      "actual": 490,
-      "feedback": "INCREASED",
-      "trainingFeedback": "HIGH_ACWR",
-      "sleepHistoryAdjustment": "NO_CHANGE",
-      "hrvAdjustment": "NO_CHANGE",
-      "napAdjustment": "NO_CHANGE",
-      "displayedForTheDay": true,
-      "preferredActivityTracker": true
-    }
+    "retro": false
   },
   "body_battery": {
-    "date": "2026-08-09",
+    "date": "2026-08-10",
     "charged": null,
     "drained": null,
     "startTimestampGMT": null,
@@ -51,27 +36,27 @@
     "endTimestampLocal": null,
     "bodyBatteryValuesArray": [
       [
-        1786233600001,
+        1786320000001,
         null
       ],
       [
-        1786233600002,
+        1786320000002,
         null
       ],
       [
-        1786233600003,
+        1786320000003,
         null
       ],
       [
-        1786233600004,
+        1786320000004,
         null
       ],
       [
-        1786233600005,
+        1786320000005,
         null
       ],
       [
-        1786233600006,
+        1786320000006,
         null
       ]
     ],
