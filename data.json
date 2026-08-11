@@ -1,6 +1,6 @@
 {
   "date": "2026-08-11",
-  "fetched_at": "2026-08-11T17:55:18.824935",
+  "fetched_at": "2026-08-11T19:59:52.468316",
   "hrv": {
     "calendarDate": "2026-08-11",
     "weeklyAvg": 60,
@@ -155,36 +155,36 @@
   },
   "body_battery": {
     "date": "2026-08-11",
-    "charged": 47,
-    "drained": 39,
+    "charged": 48,
+    "drained": 72,
     "startTimestampGMT": "2026-08-10T22:00:00.0",
-    "endTimestampGMT": "2026-08-11T12:26:00.0",
+    "endTimestampGMT": "2026-08-11T19:58:00.0",
     "startTimestampLocal": "2026-08-11T00:00:00.0",
-    "endTimestampLocal": "2026-08-11T14:26:00.0",
+    "endTimestampLocal": "2026-08-11T21:58:00.0",
     "bodyBatteryValuesArray": [
       [
         1786399200000,
         53
       ],
       [
-        1786416300000,
-        87
-      ],
-      [
-        1786416660000,
-        88
+        1786424580000,
+        98
       ],
       [
         1786426920000,
         100
       ],
       [
-        1786434120000,
-        92
+        1786451580000,
+        59
       ],
       [
-        1786450860000,
-        61
+        1786452120000,
+        58
+      ],
+      [
+        1786477680000,
+        29
       ]
     ],
     "bodyBatteryValueDescriptorDTOList": [
@@ -198,10 +198,10 @@
       }
     ],
     "bodyBatteryDynamicFeedbackEvent": {
-      "eventTimestampGmt": "2026-08-11T12:24:36.0",
-      "bodyBatteryLevel": "HIGH",
-      "feedbackShortType": "DAY_NOT_STRESS_DATA_AND_INTENSIVE_EXERCISE",
-      "feedbackLongType": "DAY_NOT_STRESS_DATA_AND_INTENSIVE_EXERCISE"
+      "eventTimestampGmt": "2026-08-11T19:26:57.0",
+      "bodyBatteryLevel": "MODERATE",
+      "feedbackShortType": "SLEEP_PREPARATION_BALANCED_AND_INTENSIVE_EXERCISE",
+      "feedbackLongType": "SLEEP_PREPARATION_BALANCED_AND_INTENSIVE_EXERCISE"
     },
     "bodyBatteryActivityEvent": [
       {
@@ -221,6 +221,15 @@
         "bodyBatteryImpact": -11,
         "feedbackType": "EXERCISE_TRAINING_EFFECT_3",
         "shortFeedback": "IMPROVING_ANAEROBIC_CAPACITY_AND_SPEED"
+      },
+      {
+        "eventType": "NAP",
+        "eventStartTimeGmt": "2026-08-11T13:34:52.0",
+        "timezoneOffset": 7200000,
+        "durationInMilliseconds": 2700000,
+        "bodyBatteryImpact": 0,
+        "feedbackType": "NAP_RECOVERING_BODY_BATTERY_MAINTAIN",
+        "shortFeedback": "RESTFUL_NAP"
       }
     ],
     "endOfDayBodyBatteryDynamicFeedbackEvent": {
