@@ -1,6 +1,6 @@
 {
   "date": "2026-08-14",
-  "fetched_at": "2026-08-14T06:12:26.493602",
+  "fetched_at": "2026-08-14T08:14:17.537090",
   "hrv": {
     "calendarDate": "2026-08-14",
     "weeklyAvg": 60,
@@ -43,6 +43,7 @@
     "averageSpO2Value": 93.0,
     "lowestSpO2Value": 83,
     "highestSpO2Value": 100,
+    "averageSpO2HRSleep": 55.0,
     "averageRespirationValue": 15.0,
     "lowestRespirationValue": 8.0,
     "highestRespirationValue": 19.0,
@@ -139,31 +140,31 @@
   "body_battery": {
     "date": "2026-08-14",
     "charged": 37,
-    "drained": 1,
+    "drained": 5,
     "startTimestampGMT": "2026-08-13T22:00:00.0",
-    "endTimestampGMT": "2026-08-14T05:52:00.0",
+    "endTimestampGMT": "2026-08-14T07:01:00.0",
     "startTimestampLocal": "2026-08-14T00:00:00.0",
-    "endTimestampLocal": "2026-08-14T07:52:00.0",
+    "endTimestampLocal": "2026-08-14T09:01:00.0",
     "bodyBatteryValuesArray": [
       [
         1786658400000,
         33
       ],
       [
-        1786667760000,
-        44
+        1786669200000,
+        47
       ],
       [
-        1786667940000,
-        44
+        1786669380000,
+        47
       ],
       [
-        1786677300000,
-        59
+        1786679280000,
+        62
       ],
       [
-        1786677480000,
-        59
+        1786680360000,
+        63
       ],
       [
         1786685220000,
