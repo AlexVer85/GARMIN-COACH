@@ -1,6 +1,6 @@
 {
   "date": "2026-08-14",
-  "fetched_at": "2026-08-14T08:14:17.537090",
+  "fetched_at": "2026-08-14T09:59:07.052870",
   "hrv": {
     "calendarDate": "2026-08-14",
     "weeklyAvg": 60,
@@ -124,7 +124,7 @@
       "userProfilePk": 134963810,
       "calendarDate": "2026-08-15",
       "deviceId": 3606061703,
-      "timestampGmt": "2026-08-14T05:31:51",
+      "timestampGmt": "2026-08-14T08:39:23",
       "baseline": 470,
       "actual": 470,
       "feedback": "NO_CHANGE_NO_ADJUSTMENTS",
@@ -209,6 +209,14 @@
     {
       "name": "Musculation",
       "type": "strength_training",
+      "date": "2026-08-14",
+      "duration": 76,
+      "hrAvg": 78.0,
+      "calories": 219.0
+    },
+    {
+      "name": "Musculation",
+      "type": "strength_training",
       "date": "2026-08-12",
       "duration": 73,
       "hrAvg": 82.0,
@@ -237,14 +245,6 @@
       "duration": 49,
       "hrAvg": 89.0,
       "calories": 159.0
-    },
-    {
-      "name": "Le Cannet - Allure 10km/seuil",
-      "type": "running",
-      "date": "2026-08-05",
-      "duration": 35,
-      "hrAvg": 149.0,
-      "calories": 467.0
     }
   ]
 }
