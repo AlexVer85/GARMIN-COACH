@@ -1,6 +1,6 @@
 {
   "date": "2026-08-14",
-  "fetched_at": "2026-08-14T14:14:46.798642",
+  "fetched_at": "2026-08-14T15:50:05.016119",
   "hrv": {
     "calendarDate": "2026-08-14",
     "weeklyAvg": 60,
@@ -21,7 +21,7 @@
     "userProfilePK": 134963810,
     "calendarDate": "2026-08-14",
     "sleepTimeSeconds": 25666,
-    "napTimeSeconds": 0,
+    "napTimeSeconds": 4255,
     "sleepWindowConfirmed": true,
     "sleepWindowConfirmationType": "enhanced_confirmed_final",
     "sleepStartTimestampGMT": 1786659124000,
@@ -124,51 +124,67 @@
       "userProfilePk": 134963810,
       "calendarDate": "2026-08-15",
       "deviceId": 3606061703,
-      "timestampGmt": "2026-08-14T08:39:23",
+      "timestampGmt": "2026-08-14T15:03:06",
       "baseline": 470,
-      "actual": 470,
-      "feedback": "NO_CHANGE_NO_ADJUSTMENTS",
+      "actual": 420,
+      "feedback": "DECREASED",
       "trainingFeedback": "NO_CHANGE",
       "sleepHistoryAdjustment": "NO_CHANGE",
       "hrvAdjustment": "NO_CHANGE",
-      "napAdjustment": "NO_CHANGE",
-      "displayedForTheDay": false,
+      "napAdjustment": "DECREASING",
+      "displayedForTheDay": true,
       "preferredActivityTracker": true
     },
+    "dailyNapDTOS": [
+      {
+        "userProfilePK": 134963810,
+        "deviceId": 3606061703,
+        "calendarDate": "2026-08-14",
+        "napTimeSec": 4255,
+        "napStartTimestampGMT": "2026-08-14T13:52:10",
+        "napEndTimestampGMT": "2026-08-14T15:03:05",
+        "napFeedback": "LATE_TIMING_LONG_DURATION_LOW_NEED",
+        "napSource": 1,
+        "napStartTimeOffset": 120,
+        "napEndTimeOffset": 120,
+        "createTimestampGMT": null,
+        "updateTimestampGMT": null
+      }
+    ],
     "breathingDisruptionSeverity": "LOW"
   },
   "body_battery": {
     "date": "2026-08-14",
-    "charged": 37,
-    "drained": 5,
+    "charged": 43,
+    "drained": 34,
     "startTimestampGMT": "2026-08-13T22:00:00.0",
-    "endTimestampGMT": "2026-08-14T07:01:00.0",
+    "endTimestampGMT": "2026-08-14T15:31:00.0",
     "startTimestampLocal": "2026-08-14T00:00:00.0",
-    "endTimestampLocal": "2026-08-14T09:01:00.0",
+    "endTimestampLocal": "2026-08-14T17:31:00.0",
     "bodyBatteryValuesArray": [
       [
         1786658400000,
         33
       ],
       [
-        1786669200000,
-        47
-      ],
-      [
-        1786669380000,
-        47
-      ],
-      [
         1786679280000,
         62
       ],
       [
-        1786680360000,
-        63
-      ],
-      [
         1786685220000,
         70
+      ],
+      [
+        1786700160000,
+        55
+      ],
+      [
+        1786700520000,
+        55
+      ],
+      [
+        1786715280000,
+        39
       ]
     ],
     "bodyBatteryValueDescriptorDTOList": [
@@ -182,10 +198,10 @@
       }
     ],
     "bodyBatteryDynamicFeedbackEvent": {
-      "eventTimestampGmt": "2026-08-14T05:32:08.0",
+      "eventTimestampGmt": "2026-08-14T15:30:35.0",
       "bodyBatteryLevel": "MODERATE",
-      "feedbackShortType": null,
-      "feedbackLongType": "EARLY_MORNING_HIGH_MODERATE_HIGH_BB_BEFORE_SLEEP_BB_YESTERDAY_MORNING"
+      "feedbackShortType": "DAY_BALANCED_AND_EXERCISE",
+      "feedbackLongType": "DAY_BALANCED_AND_EXERCISE"
     },
     "bodyBatteryActivityEvent": [
       {
@@ -196,6 +212,24 @@
         "bodyBatteryImpact": 37,
         "feedbackType": "NONE",
         "shortFeedback": "NONE"
+      },
+      {
+        "eventType": "ACTIVITY",
+        "eventStartTimeGmt": "2026-08-14T07:22:54.0",
+        "timezoneOffset": 7200000,
+        "durationInMilliseconds": 4560000,
+        "bodyBatteryImpact": -5,
+        "feedbackType": "EXERCISE_TRAINING_EFFECT_BELOW_2",
+        "shortFeedback": "NONE"
+      },
+      {
+        "eventType": "NAP",
+        "eventStartTimeGmt": "2026-08-14T14:01:23.0",
+        "timezoneOffset": 7200000,
+        "durationInMilliseconds": 3660000,
+        "bodyBatteryImpact": 4,
+        "feedbackType": "NAP_RECOVERING_BODY_BATTERY_INCREASE",
+        "shortFeedback": "RESTFUL_NAP"
       }
     ],
     "endOfDayBodyBatteryDynamicFeedbackEvent": {
