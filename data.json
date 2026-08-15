@@ -1,6 +1,6 @@
 {
   "date": "2026-08-15",
-  "fetched_at": "2026-08-15T17:18:55.850994",
+  "fetched_at": "2026-08-15T19:20:10.338418",
   "hrv": {
     "calendarDate": "2026-08-15",
     "weeklyAvg": 60,
@@ -139,36 +139,36 @@
   },
   "body_battery": {
     "date": "2026-08-15",
-    "charged": 64,
-    "drained": 20,
+    "charged": 66,
+    "drained": 46,
     "startTimestampGMT": "2026-08-14T22:00:00.0",
-    "endTimestampGMT": "2026-08-15T11:01:00.0",
+    "endTimestampGMT": "2026-08-15T17:52:00.0",
     "startTimestampLocal": "2026-08-15T00:00:00.0",
-    "endTimestampLocal": "2026-08-15T13:01:00.0",
+    "endTimestampLocal": "2026-08-15T19:52:00.0",
     "bodyBatteryValuesArray": [
       [
         1786744800000,
         29
       ],
       [
-        1786760100000,
-        70
-      ],
-      [
-        1786760460000,
-        71
+        1786768560000,
+        88
       ],
       [
         1786773420000,
         93
       ],
       [
-        1786776120000,
-        92
+        1786792500000,
+        71
       ],
       [
-        1786790880000,
-        73
+        1786792680000,
+        71
+      ],
+      [
+        1786814280000,
+        49
       ]
     ],
     "bodyBatteryValueDescriptorDTOList": [
@@ -182,7 +182,7 @@
       }
     ],
     "bodyBatteryDynamicFeedbackEvent": {
-      "eventTimestampGmt": "2026-08-15T10:38:42.0",
+      "eventTimestampGmt": "2026-08-15T12:35:49.0",
       "bodyBatteryLevel": "HIGH",
       "feedbackShortType": "DAY_RECOVERING_AND_INACTIVE",
       "feedbackLongType": "DAY_RECOVERING_AND_INACTIVE"
@@ -196,6 +196,15 @@
         "bodyBatteryImpact": 62,
         "feedbackType": "NONE",
         "shortFeedback": "NONE"
+      },
+      {
+        "eventType": "RECOVERY",
+        "eventStartTimeGmt": "2026-08-15T16:44:25.0",
+        "timezoneOffset": 7200000,
+        "durationInMilliseconds": 3060000,
+        "bodyBatteryImpact": 1,
+        "feedbackType": "RECOVERY_BODY_BATTERY_INCREASE",
+        "shortFeedback": "BODY_BATTERY_RECHARGE"
       }
     ],
     "endOfDayBodyBatteryDynamicFeedbackEvent": {
