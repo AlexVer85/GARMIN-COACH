@@ -1,6 +1,6 @@
 {
   "date": "2026-08-17",
-  "fetched_at": "2026-08-17T07:51:47.934680",
+  "fetched_at": "2026-08-17T09:39:24.192400",
   "hrv": {},
   "sleep": {
     "id": null,
@@ -38,6 +38,21 @@
       "hrvAdjustment": "NO_CHANGE",
       "napAdjustment": "DECREASING",
       "displayedForTheDay": true,
+      "preferredActivityTracker": true
+    },
+    "nextSleepNeed": {
+      "userProfilePk": 134963810,
+      "calendarDate": "2026-08-18",
+      "deviceId": 3606061703,
+      "timestampGmt": "2026-08-17T09:14:05",
+      "baseline": 470,
+      "actual": 470,
+      "feedback": "NO_CHANGE_NO_ADJUSTMENTS",
+      "trainingFeedback": "NO_CHANGE",
+      "sleepHistoryAdjustment": "NO_DATA",
+      "hrvAdjustment": "NO_DATA",
+      "napAdjustment": "NO_CHANGE",
+      "displayedForTheDay": false,
       "preferredActivityTracker": true
     }
   },
@@ -88,6 +103,14 @@
   },
   "activities": [
     {
+      "name": "Musculation",
+      "type": "strength_training",
+      "date": "2026-08-17",
+      "duration": 64,
+      "hrAvg": 82.0,
+      "calories": 234.0
+    },
+    {
       "name": "Le Cannet - Base",
       "type": "running",
       "date": "2026-08-16",
@@ -118,14 +141,6 @@
       "duration": 30,
       "hrAvg": 146.0,
       "calories": 385.0
-    },
-    {
-      "name": "Le Cannet - Sprint",
-      "type": "running",
-      "date": "2026-08-07",
-      "duration": 33,
-      "hrAvg": 139.0,
-      "calories": 404.0
     }
   ]
 }
